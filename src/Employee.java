@@ -28,15 +28,16 @@ public class Employee {
     }
 
     //JP 1-f create setName method
-    public String setName(){
+    public String setName() {
         String employeeName:
-        int nameCount =0;
+        int nameCount = 0;
 
-        do{
+        do {
             System.out.println("Employee full name (First Last): ");
             employeeName = scanner.nextLine();
 
-            if
+            nameCount = countChars(employeeName, ' ');
+        } while (nameCount != 1);
     }
 
     // JP 1-c Create toString method
