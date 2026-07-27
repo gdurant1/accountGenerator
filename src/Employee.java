@@ -17,10 +17,10 @@ public class Employee {
     }// end constructor
 
     //JP 1-e private methode countChars
-    private int countChars(String str, char c){
+    private int countChars(String str, char targetChar){
         int count = 0;
         for (int i = 0; i < str.length(); i++){
-            if (str.charAt(i) == c){
+            if (str.charAt(i) == targetChar){
                 count ++;
             }
         }
@@ -29,7 +29,7 @@ public class Employee {
 
     //JP 1-f create setName method
     public String setName() {
-        String employeeName:
+        String employeeName;
         int nameCount = 0;
 
         do {
@@ -38,6 +38,13 @@ public class Employee {
 
             nameCount = countChars(employeeName, ' ');
         } while (nameCount != 1);
+        return employeeName;
+    }
+
+    // JP 1-g create setUserName method
+    private String setUserName(String name){
+        String formatName = name.toLowerCase();
+        return formatName.replace(" ", ".");
     }
 
     // JP 1-c Create toString method
