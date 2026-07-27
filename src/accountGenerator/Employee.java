@@ -1,3 +1,4 @@
+package accountGenerator;
 import java.util.Scanner;
 // JB 1-b create employee class
 public class Employee {
@@ -86,7 +87,7 @@ public class Employee {
                 break;
             }
         }
-
+        return passwordBuilder.toString();
     }
 
     // JP 1-c Create toString method
