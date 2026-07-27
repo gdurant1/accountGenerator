@@ -59,14 +59,14 @@ public class Employee {
 
     // JP 1-i setPassword method
     private String setPassword(String username){
-        StringBuilder passwordBuilder = new StringBuilder(username);
+        StringBuilder passwordBuilder;
 
-        //adjust usernmae length to 8 characters
+        //adjust username length to 8 characters
         if ( username.length() > 8 ){
-            passwordBuilder.append(username.substring(0, 8)); }
+            passwordBuilder = new StringBuilder(username.substring(0, 8)); }
         else {
-            passwordBuilder.append(username);
-            while (passwordBuilder.length() < 8 ){
+            passwordBuilder = new StringBuilder(username);
+            while (passwordBuilder.length() <= 8 ){
                 passwordBuilder.append('*');
             }
         }
