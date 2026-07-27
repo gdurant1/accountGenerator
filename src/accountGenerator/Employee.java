@@ -31,14 +31,21 @@ public class Employee {
     //JP 1-f create setName method
     public String setName() {
         String employeeName;
-        int nameCount = 0;
+        //int nameCount = 0;
 
-        do {
+        while(true){
             System.out.println("Employee full name (First Last): ");
             employeeName = scanner.nextLine();
 
-            nameCount = countChars(employeeName, ' ');
-        } while (nameCount != 1);
+            //check input
+            if(employeeName.matches("^\\S+\\s+\\S+$")){
+                break; }
+            else {
+                System.out.println("Incorrect format for name");
+            }
+
+            //nameCount = countChars(employeeName, ' ');
+        }
         return employeeName;
     }
 
