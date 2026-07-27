@@ -56,6 +56,39 @@ public class Employee {
         return firstNameLetter + lastName + "@oracleacademy.test";
     }
 
+    // JP 1-i setPassword method
+    private String setPassword(String username){
+        StringBuilder passwordBuilder = new StringBuilder(username);
+
+        //adjust usernmae length to 8 characters
+        if ( username.length() > 8 ){
+            passwordBuilder.append(username.substring(0, 8)); }
+        else {
+            passwordBuilder.append(username);
+            while (passwordBuilder.length() < 8 ){
+                passwordBuilder.append('*');
+            }
+        }
+
+        //replace vowels with *
+        for (int i = 0; i < passwordBuilder.length(); i++){
+            char c = passwordBuilder.charAt(i);
+            if ( "aeiou".indexOf(c) != -1){
+                passwordBuilder.setCharAt(i, '*');
+            }
+        }
+
+        //set first aplabet character to uppercase
+        for(int i = 0; i <passwordBuilder.length(); i++){
+            char c = passwordBuilder.charAt(i);
+            if (Character.isLetter(c)){
+                passwordBuilder.setCharAt(i, Character.toUpperCase(c));
+                break;
+            }
+        }
+
+    }
+
     // JP 1-c Create toString method
     @Override
     public String toString(){
