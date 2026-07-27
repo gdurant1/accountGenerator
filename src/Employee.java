@@ -47,6 +47,15 @@ public class Employee {
         return formatName.replace(" ", ".");
     }
 
+    // JP 1-h setEmail method
+    private String setEmail(String username){
+        String[] parts = username.split("\\.");
+        char firstNameLetter = parts[0].charAt(0);
+        String lastName = parts[1];
+
+        return firstNameLetter + lastName + "@oracleacademy.test";
+    }
+
     // JP 1-c Create toString method
     @Override
     public String toString(){
